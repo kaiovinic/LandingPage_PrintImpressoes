@@ -1,0 +1,851 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Print Impressões - Especialistas em sublimação total, camisetas personalizadas, brindes, canecas, adesivos, crachás e comunicação visual em Alagoinhas-BA.">
+  <link rel="shortcut icon" href="assets/logo-cara-de-urso.png" type="image/x-icon">
+  <title>Print Impressões</title>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;600;800;900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0b0c10;
+      --card-bg: #141622;
+      --border: #22263f;
+      --text: #f3f4f6;
+      --text-muted: #9ca3af;
+      --primary: #8b5cf6;
+      --primary-glow: rgba(139, 92, 246, 0.2);
+
+      /* Brand Logo Colors */
+      --logo-p: #00e5ff;
+      --logo-r: #ff007f;
+      --logo-i: #ffeb3b;
+      --logo-n: #ff9800;
+      --logo-t: #8bc34a;
+
+      --whatsapp: #25d366;
+      --whatsapp-hover: #20ba5a;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    h1,
+    h2,
+    h3 {
+      font-family: 'Outfit', sans-serif;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* Header */
+    header {
+      padding: 20px 0;
+      border-bottom: 1px solid var(--border);
+      background: rgba(11, 12, 16, 0.85);
+      backdrop-filter: blur(12px);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .header-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    /* Logo Styling based on actual brand */
+    .brand-logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+    }
+
+    .logo-text {
+      font-family: 'Outfit', sans-serif;
+      font-size: 32px;
+      font-weight: 900;
+      display: flex;
+      align-items: baseline;
+      letter-spacing: -1px;
+    }
+
+    .logo-text .l-p {
+      color: var(--logo-p);
+    }
+
+    .logo-text .l-r {
+      color: var(--logo-r);
+    }
+
+    .logo-text .l-i {
+      color: var(--logo-i);
+      position: relative;
+    }
+
+    .logo-text .l-n {
+      color: var(--logo-n);
+    }
+
+    .logo-text .l-t {
+      color: var(--logo-t);
+    }
+
+    .logo-sub {
+      font-size: 11px;
+      font-weight: 800;
+      color: var(--text-muted);
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-top: -4px;
+    }
+
+    .logo-container {
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Roaring Bear Mascot Stamp */
+    .bear-stamp {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 46px;
+      height: 46px;
+      border-radius: 50%;
+      background: #fff;
+      border: 2px solid var(--border);
+      padding: 4px;
+      box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+    }
+
+    .bear-stamp svg {
+      width: 100%;
+      height: 100%;
+      color: #000;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 12px 24px;
+      border-radius: 8px;
+      font-weight: 700;
+      font-size: 15px;
+      text-decoration: none;
+      transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+      cursor: pointer;
+      border: none;
+    }
+
+    .btn-outline {
+      background: transparent;
+      border: 1px solid var(--border);
+      color: var(--text);
+    }
+
+    .btn-outline:hover {
+      background: rgba(255, 255, 255, 0.05);
+      border-color: var(--text-muted);
+    }
+
+    .btn-whatsapp {
+      background-color: var(--whatsapp);
+      color: #fff;
+      box-shadow: 0 0 20px rgba(37, 211, 102, 0.2);
+    }
+
+    .btn-whatsapp:hover {
+      background-color: var(--whatsapp-hover);
+      transform: translateY(-2px);
+      box-shadow: 0 0 30px rgba(37, 211, 102, 0.35);
+    }
+
+    /* Hero Section */
+    .hero {
+      padding: 90px 0 110px 0;
+      position: relative;
+      text-align: center;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -15%;
+      left: 50%;
+      transform: translate(-50%, 0);
+      width: 700px;
+      height: 700px;
+      background: radial-gradient(circle, rgba(139, 92, 246, 0.08) 0%, rgba(11, 12, 16, 0) 70%);
+      pointer-events: none;
+      z-index: -1;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 18px;
+      background: rgba(255, 0, 127, 0.08);
+      border: 1px solid rgba(255, 0, 127, 0.2);
+      border-radius: 9999px;
+      color: var(--logo-r);
+      font-size: 13px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 28px;
+    }
+
+    .hero h1 {
+      font-size: 46px;
+      font-weight: 900;
+      line-height: 1.1;
+      max-width: 850px;
+      margin: 0 auto 24px auto;
+      letter-spacing: -0.03em;
+    }
+
+    .hero h1 span {
+      background: linear-gradient(90deg, var(--logo-p) 0%, var(--logo-r) 50%, var(--logo-n) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    @media (min-width: 768px) {
+      .hero h1 {
+        font-size: 68px;
+      }
+    }
+
+    .hero p {
+      font-size: 18px;
+      color: var(--text-muted);
+      max-width: 650px;
+      margin: 0 auto 40px auto;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .hero-actions .btn {
+      padding: 16px 36px;
+      font-size: 16px;
+    }
+
+    /* Product Grid */
+    .products {
+      padding: 60px 0 60px 0;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 36px;
+      margin-bottom: 12px;
+      font-weight: 800;
+    }
+
+    .section-subtitle {
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 16px;
+      margin-bottom: 56px;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 24px;
+    }
+
+    @media (min-width: 640px) {
+      .grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    .card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 36px 28px;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background: var(--border);
+      transition: background 0.3s ease;
+    }
+
+    .card:hover {
+      border-color: rgba(139, 92, 246, 0.3);
+      transform: translateY(-4px);
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+    }
+
+    .card:hover::before {
+      background: linear-gradient(90deg, var(--logo-p), var(--logo-r), var(--logo-n));
+    }
+
+    .card-icon {
+      width: 56px;
+      height: 56px;
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--logo-p);
+      margin-bottom: 24px;
+      transition: all 0.3s ease;
+    }
+
+    .card:hover .card-icon {
+      color: #fff;
+      background: var(--primary);
+      border-color: var(--primary);
+      box-shadow: 0 0 15px var(--primary-glow);
+    }
+
+    .card h3 {
+      font-size: 22px;
+      margin-bottom: 12px;
+      font-weight: 700;
+    }
+
+    .card p {
+      color: var(--text-muted);
+      font-size: 15px;
+      line-height: 1.6;
+    }
+
+    /* Portfolio Section (Visual Showcase) */
+    .portfolio {
+      padding: 60px 0 100px 0;
+      background: linear-gradient(180deg, var(--bg) 0%, rgba(139, 92, 246, 0.02) 50%, var(--bg) 100%);
+    }
+
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 32px;
+    }
+
+    @media (min-width: 768px) {
+      .portfolio-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    .portfolio-item {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .portfolio-item:hover {
+      border-color: var(--logo-p);
+      transform: translateY(-4px);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    }
+
+    .portfolio-img-wrapper {
+      position: relative;
+      width: 100%;
+      padding-top: 75%;
+      /* 4:3 Aspect Ratio */
+      background: #191b29;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .portfolio-img-wrapper img {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      /* Keeps transparent product mockups beautiful */
+      padding: 16px;
+      transition: transform 0.5s ease;
+    }
+
+    .portfolio-item:hover .portfolio-img-wrapper img {
+      transform: translate(-50%, -50%) scale(1.05);
+    }
+
+    .portfolio-info {
+      padding: 24px;
+      border-top: 1px solid var(--border);
+    }
+
+    .portfolio-badge {
+      display: inline-block;
+      padding: 4px 10px;
+      background: rgba(0, 229, 255, 0.08);
+      border: 1px solid rgba(0, 229, 255, 0.2);
+      border-radius: 6px;
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--logo-p);
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+
+    .portfolio-item:nth-child(2n) .portfolio-badge {
+      background: rgba(255, 0, 127, 0.08);
+      border-color: rgba(255, 0, 127, 0.2);
+      color: var(--logo-r);
+    }
+
+    .portfolio-item:nth-child(3n) .portfolio-badge {
+      background: rgba(255, 152, 0, 0.08);
+      border-color: rgba(255, 152, 0, 0.2);
+      color: var(--logo-n);
+    }
+
+    .portfolio-info h4 {
+      font-size: 20px;
+      margin-bottom: 8px;
+      font-weight: 700;
+    }
+
+    .portfolio-info p {
+      color: var(--text-muted);
+      font-size: 14px;
+    }
+
+    /* Contact Section */
+    .contact {
+      padding: 80px 0;
+      border-top: 1px solid var(--border);
+      background: radial-gradient(100% 100% at 50% 100%, rgba(255, 0, 127, 0.03) 0%, rgba(11, 12, 16, 0) 100%);
+    }
+
+    .contact-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 40px;
+      max-width: 800px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .contact-title {
+      font-size: 28px;
+      font-weight: 800;
+      margin-bottom: 16px;
+    }
+
+    .contact-desc {
+      color: var(--text-muted);
+      margin-bottom: 36px;
+      font-size: 16px;
+    }
+
+    .contact-methods {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      margin-bottom: 40px;
+    }
+
+    @media (min-width: 640px) {
+      .contact-methods {
+        flex-direction: row;
+        justify-content: space-around;
+      }
+    }
+
+    .method-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .method-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--logo-n);
+    }
+
+    .method-label {
+      font-size: 12px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--text-muted);
+    }
+
+    .method-value {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--text);
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+
+    .method-value:hover {
+      color: var(--logo-p);
+    }
+
+    /* Footer */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 40px 0;
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 14px;
+    }
+
+    footer a {
+      color: var(--text);
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.2s ease;
+    }
+
+    footer a:hover {
+      color: var(--logo-r);
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div class="container header-content">
+      <a href="#" class="brand-logo">
+        <div class="bear-stamp">
+          <!-- Cara de Urso Stamp SVG -->
+          <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="50" cy="50" r="45" stroke="black" stroke-width="5" />
+            <!-- Bear head silhouette -->
+            <path d="M30 40 C 26 36, 20 44, 24 50 C 22 62, 34 76, 50 76 C 66 76, 78 62, 76 50 C 80 44, 74 36, 70 40 C 65 32, 35 32, 30 40 Z" fill="black" />
+            <!-- Roaring ears -->
+            <circle cx="28" cy="34" r="8" fill="black" />
+            <circle cx="72" cy="34" r="8" fill="black" />
+            <circle cx="28" cy="34" r="4" fill="white" />
+            <circle cx="72" cy="34" r="4" fill="white" />
+            <!-- Eyes -->
+            <circle cx="40" cy="48" r="3.5" fill="white" />
+            <circle cx="60" cy="48" r="3.5" fill="white" />
+            <circle cx="42" cy="48" r="1.5" fill="black" />
+            <circle cx="58" cy="48" r="1.5" fill="black" />
+            <!-- Snout/Mouth roaring -->
+            <ellipse cx="50" cy="62" rx="11" ry="8" fill="white" />
+            <path d="M44 60 C 44 65, 56 65, 56 60 Z" fill="black" />
+            <path d="M47 57 L 53 57 L 50 61 Z" fill="black" />
+          </svg>
+        </div>
+        <div class="logo-container">
+          <div class="logo-text">
+            <span class="l-p">P</span>
+            <span class="l-r">r</span>
+            <span class="l-i">i</span>
+            <span class="l-n">n</span>
+            <span class="l-t">t</span>
+          </div>
+          <span class="logo-sub">Impressões</span>
+        </div>
+      </a>
+      <a href="https://wa.me/5575988921882" class="btn btn-whatsapp" target="_blank" rel="noopener noreferrer">
+        <!-- WhatsApp Icon SVG -->
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+          <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.514 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.724-1.455L0 24zm6.59-4.846c1.6.95 3.498 1.453 5.418 1.454 5.511 0 9.993-4.485 9.997-10.001.002-2.673-1.037-5.186-2.927-7.079-1.89-1.892-4.404-2.932-7.08-2.933-5.515 0-10.002 4.487-10.005 10.002-.001 1.952.512 3.86 1.486 5.545L1.5 21.033l4.577-1.22.07-.059zm12.386-5.833c-.324-.162-1.917-.946-2.213-1.053-.297-.108-.513-.162-.73.162-.216.324-.838 1.053-1.027 1.269-.19.215-.378.242-.702.081-.324-.162-1.37-.505-2.61-1.611-.964-.86-1.614-1.92-1.803-2.243-.19-.324-.02-.5-.181-.661-.146-.146-.324-.378-.486-.567-.162-.189-.216-.324-.324-.54-.108-.216-.054-.405-.027-.567.027-.162.216-.513.324-.729.108-.216.162-.378.243-.54.081-.162.04-.324-.013-.486-.054-.162-.513-1.242-.703-1.701-.185-.444-.368-.383-.513-.39-.133-.006-.284-.007-.435-.007a.837.837 0 0 0-.608.283c-.203.228-.77.756-.77 1.843 0 1.086.79 2.137.9 2.285.11.149 1.554 2.373 3.766 3.328.526.227.937.363.11.149 1.554 2.373 3.766 3.328.526.227.937.363 1.258.465.528.168 1.01.144 1.39.088.422-.062 1.917-.783 2.189-1.539.27-.756.27-1.404.189-1.539-.08-.135-.297-.216-.621-.378z" />
+        </svg>
+        <span>Fazer Orçamento</span>
+      </a>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container">
+      <div class="hero-badge">
+        <span>🎨</span>
+        Sublimação Total & Comunicação Visual
+      </div>
+      <h1>Qualidade fotográfica e durabilidade para <span>suas ideias</span></h1>
+      <p>Somos a <strong>Print Impressões (Cara de Urso)</strong>. Especialistas em personalizar camisas, brindes e comunicação visual completa para empresas, eventos e presentes em Alagoinhas e região.</p>
+
+      <div class="hero-actions">
+        <a href="https://wa.me/5575988921882" target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp">
+          <!-- WhatsApp Icon SVG -->
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+            <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.514 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.724-1.455L0 24zm6.59-4.846c1.6.95 3.498 1.453 5.418 1.454 5.511 0 9.993-4.485 9.997-10.001.002-2.673-1.037-5.186-2.927-7.079-1.89-1.892-4.404-2.932-7.08-2.933-5.515 0-10.002 4.487-10.005 10.002-.001 1.952.512 3.86 1.486 5.545L1.5 21.033l4.577-1.22.07-.059zm12.386-5.833c-.324-.162-1.917-.946-2.213-1.053-.297-.108-.513-.162-.73.162-.216.324-.838 1.053-1.027 1.269-.19.215-.378.242-.702.081-.324-.162-1.37-.505-2.61-1.611-.964-.86-1.614-1.92-1.803-2.243-.19-.324-.02-.5-.181-.661-.146-.146-.324-.378-.486-.567-.162-.189-.216-.324-.324-.54-.108-.216-.054-.405-.027-.567.027-.162.216-.513.324-.729.108-.216.162-.378.243-.54.081-.162.04-.324-.013-.486-.054-.162-.513-1.242-.703-1.701-.185-.444-.368-.383-.513-.39-.133-.006-.284-.007-.435-.007a.837.837 0 0 0-.608.283c-.203.228-.77.756-.77 1.843 0 1.086.79 2.137.9 2.285.11.149 1.554 2.373 3.766 3.328.526.227.937.363 1.258.465.528.168 1.01.144 1.39.088.422-.062 1.917-.783 2.189-1.539.27-.756.27-1.404.189-1.539-.08-.135-.297-.216-.621-.378z" />
+          </svg>
+          Chamar no WhatsApp (Orçamento)
+        </a>
+        <a href="tel:7534225776" class="btn btn-outline">
+          Ligar: (75) 3422-5776
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="products">
+    <div class="container">
+      <h2 class="section-title">O que produzimos</h2>
+      <p class="section-subtitle">Confira as soluções em estamparia, brindes e materiais gráficos que fabricamos na nossa loja física.</p>
+
+      <div class="grid">
+        <div class="card">
+          <div class="card-icon">
+            <!-- T-Shirt Icon -->
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M20.38 3.46L16 1.7a2 2 0 0 0-1.43 0l-4 1.6a2 2 0 0 1-1.4 0l-4.15-1.66a2 2 0 0 0-1.44 0L.8 3.3a2 2 0 0 0-1.2 1.84v5.3a2 2 0 0 0 1.26 1.85l3.8 1.52A2 2 0 0 1 5.92 15.7v6.6a1.7 1.7 0 0 0 1.7 1.7h8.76a1.7 1.7 0 0 0 1.7-1.7V15.7a2 2 0 0 1 1.26-1.85l3.8-1.52a2 2 0 0 0 1.26-1.85v-5.3a2 2 0 0 0-1.2-1.84z" />
+              <path d="M12 1.7v5.8" />
+            </svg>
+          </div>
+          <h3>Sublimação Total</h3>
+          <p>Camisas completas estampadas de ponta a ponta. Excelente para fardamentos, eventos esportivos, camisas comemorativas e uniformes de turmas com alta definição de cores.</p>
+        </div>
+
+        <div class="card">
+          <div class="card-icon">
+            <!-- Gift Icon -->
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="20 12 20 22 4 22 4 12" />
+              <rect x="2" y="7" width="20" height="5" />
+              <line x1="12" y1="22" x2="12" y2="7" />
+              <path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z" />
+              <path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z" />
+            </svg>
+          </div>
+          <h3>Brindes Personalizados</h3>
+          <p>Fabricamos chaveiros (redondos, quadrados, sextavados), chaveiros "Cara de Urso", canetas, bonés e diversos brindes corporativos para fixar a sua marca na mente do cliente.</p>
+        </div>
+
+        <div class="card">
+          <div class="card-icon">
+            <!-- Sticker / Badge Icon -->
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="3" y="4" width="18" height="16" rx="2" />
+              <circle cx="12" cy="10" r="3" />
+              <path d="M8 18h8" />
+            </svg>
+          </div>
+          <h3>Adesivos & Crachás</h3>
+          <p>Adesivos vinílicos recortados, etiquetas, crachás de identificação com cordão, credenciais e mini plaquinhas de alta durabilidade e brilho.</p>
+        </div>
+
+        <div class="card">
+          <div class="card-icon">
+            <!-- Mug / Bottle Icon -->
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M17 8h1a4 4 0 1 1 0 8h-1" />
+              <path d="M3 8h14v9a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4V8z" />
+              <line x1="6" y1="2" x2="14" y2="2" />
+            </svg>
+          </div>
+          <h3>Canecas & Squeezes</h3>
+          <p>Canecas de cerâmica tradicionais, canecas mágicas que revelam a arte com calor, copos personalizados e squeezes (garrafas de alumínio) ideais para presentes e eventos esportivos.</p>
+        </div>
+
+        <div class="card">
+          <div class="card-icon">
+            <!-- Business Card Icon -->
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="3" width="20" height="14" rx="2" ry="2" />
+              <line x1="2" y1="10" x2="22" y2="10" />
+              <path d="M6 6h2" />
+              <path d="M16 6h2" />
+              <circle cx="6" cy="14" r="1" />
+              <circle cx="10" cy="14" r="1" />
+            </svg>
+          </div>
+          <h3>Cartões de Visita & Panfletos</h3>
+          <p>Impressos em papel de alta gramatura com verniz localizado ou brilho total. Cartões de visitas profissionais, tags de roupas e folhetos informativos.</p>
+        </div>
+
+        <div class="card">
+          <div class="card-icon">
+            <!-- Design Icon -->
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" />
+              <path d="M12 6V12L16 14" />
+            </svg>
+          </div>
+          <h3>Kits Promocionais</h3>
+          <p>Montamos kits temáticos especiais para datas comemorativas (Dia das Mães, Dia dos Namorados, Dia dos Pais) unindo camisas, canecas e chaveiros em embalagens personalizadas com preços promocionais.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Visual Showcase Section -->
+  <section class="portfolio">
+    <div class="container">
+      <h2 class="section-title">Nossos Produtos</h2>
+      <p class="section-subtitle">Veja fotos de produtos personalizados produzidos em nossa gráfica.</p>
+
+      <div class="portfolio-grid">
+        <div class="portfolio-item">
+          <div class="portfolio-img-wrapper">
+            <img src="assets/camisa_sublimacao.png" alt="Camisa Sublimação Total">
+          </div>
+          <div class="portfolio-info">
+            <div class="portfolio-badge">Sublimação</div>
+            <h4>Camiseta Sublimação Total</h4>
+            <p>Estampa digital com vivacidade máxima de cores e toque zero. Ideal para times, turmas e eventos.</p>
+          </div>
+        </div>
+
+        <div class="portfolio-item">
+          <div class="portfolio-img-wrapper">
+            <img src="assets/caneca.png" alt="Caneca Personalizada">
+          </div>
+          <div class="portfolio-info">
+            <div class="portfolio-badge">Canecas</div>
+            <h4>Caneca de Cerâmica Personalizada</h4>
+            <p>Impressão de alta definição "Sua Foto Aqui" com excelente brilho e durabilidade para uso diário ou presente.</p>
+          </div>
+        </div>
+
+        <div class="portfolio-item">
+          <div class="portfolio-img-wrapper">
+            <img src="assets/camisa_polo.png" alt="Camisa Polo Promocional">
+          </div>
+          <div class="portfolio-info">
+            <div class="portfolio-badge">Uniformes</div>
+            <h4>Camisa Gola Polo com Logotipo</h4>
+            <p>Uniformização de alta qualidade com gravação fiel de logo e contato. Conforto e visual profissional.</p>
+          </div>
+        </div>
+
+        <div class="portfolio-item">
+          <div class="portfolio-img-wrapper">
+            <img src="assets/cartao_visita.png" alt="Adesivos e Cartões de Visita">
+          </div>
+          <div class="portfolio-info">
+            <div class="portfolio-badge">Impressos</div>
+            <h4>Cartões de Visita & Adesivos</h4>
+            <p>Impressão profissional para divulgação da sua empresa. Adesivos recortados e cartões de alto padrão.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact">
+    <div class="container">
+      <div class="contact-card">
+        <h2 class="contact-title">Solicite seu Orçamento Grátis</h2>
+        <p class="contact-desc">Mande sua ideia ou sua logo e desenvolvemos um layout virtual do seu produto sem custo. Fale conosco pelos canais abaixo:</p>
+
+        <div class="contact-methods">
+          <div class="method-item">
+            <div class="method-icon">
+              <!-- Tel Icon -->
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+              </svg>
+            </div>
+            <span class="method-label">Telefone Fixo</span>
+            <a href="tel:7534225776" class="method-value">(75) 3422-5776</a>
+          </div>
+
+          <div class="method-item">
+            <div class="method-icon" style="color: var(--whatsapp);">
+              <!-- Whatsapp Icon -->
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.514 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.724-1.455L0 24zm6.59-4.846c1.6.95 3.498 1.453 5.418 1.454 5.511 0 9.993-4.485 9.997-10.001.002-2.673-1.037-5.186-2.927-7.079-1.89-1.892-4.404-2.932-7.08-2.933-5.515 0-10.002 4.487-10.005 10.002-.001 1.952.512 3.86 1.486 5.545L1.5 21.033l4.577-1.22.07-.059zm12.386-5.833c-.324-.162-1.917-.946-2.213-1.053-.297-.108-.513-.162-.73.162-.216.324-.838 1.053-1.027 1.269-.19.215-.378.242-.702.081-.324-.162-1.37-.505-2.61-1.611-.964-.86-1.614-1.92-1.803-2.243-.19-.324-.02-.5-.181-.661-.146-.146-.324-.378-.486-.567-.162-.189-.216-.324-.324-.54-.108-.216-.054-.405-.027-.567.027-.162.216-.513.324-.729.108-.216.162-.378.243-.54.081-.162.04-.324-.013-.486-.054-.162-.513-1.242-.703-1.701-.185-.444-.368-.383-.513-.39-.133-.006-.284-.007-.435-.007a.837.837 0 0 0-.608.283c-.203.228-.77.756-.77 1.843 0 1.086.79 2.137.9 2.285.11.149 1.554 2.373 3.766 3.328.526.227.937.363 1.258.465.528.168 1.01.144 1.39.088.422-.062 1.917-.783 2.189-1.539.27-.756.27-1.404.189-1.539-.08-.135-.297-.216-.621-.378z" />
+              </svg>
+            </div>
+            <span class="method-label">WhatsApp</span>
+            <a href="https://wa.me/5575988921882" target="_blank" rel="noopener noreferrer" class="method-value">75 9.8892-1882</a>
+          </div>
+
+          <div class="method-item">
+            <div class="method-icon" style="color: var(--logo-p);">
+              <!-- Mail Icon -->
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                <polyline points="22,6 12,13 2,6" />
+              </svg>
+            </div>
+            <span class="method-label">E-mail</span>
+            <a href="mailto:print.print@outlook.com" class="method-value">print.print@outlook.com</a>
+          </div>
+        </div>
+
+        <a href="https://wa.me/5575988921882" target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp" style="width: 100%; max-width: 350px;">
+          Iniciar Orçamento Rápido
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p>© 2026 Print Impressões - Cara de Urso. Todos os direitos reservados.</p>
+    </div>
+  </footer>
+
+</body>
+
+</html>
