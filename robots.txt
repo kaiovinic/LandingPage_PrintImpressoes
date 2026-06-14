@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://printimpressoes.com.br/sitemap.xml
