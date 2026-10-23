@@ -1,0 +1,9 @@
+# Ferramentas locais de agente
+.agents/
+.claude/
+skills-lock.json
+
+# Sistema operacional
+Thumbs.db
+Desktop.ini
+.DS_Store
